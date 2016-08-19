@@ -28,10 +28,17 @@ export function activate(context: vscode.ExtensionContext) {
     disposable = vscode.commands.registerCommand('elgalu.sayHello', () => {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
-        vscode.window.showInformationMessage('Hola querido usuario!');
-        // vscode.commands.executeCommand('moveActiveTab', { to: 'left' });
-        // let cmds = vscode.commands.getCommands(false);
-        // vscode.commands.executeCommand('editor.commands._moveActiveTab', args);
+        vscode.window.showInformationMessage('Hola querido amigo!');
+    });
+    context.subscriptions.push(disposable);
+    
+    disposable = vscode.commands.registerCommand('elgalu.moveActiveTabLeft', () => {
+        vscode.commands.executeCommand('moveActiveEditor', { by: 'tab', to: 'left' });
+    });
+    context.subscriptions.push(disposable);
+    
+    disposable = vscode.commands.registerCommand('elgalu.moveActiveTabRight', () => {
+        vscode.commands.executeCommand('moveActiveEditor', { by: 'tab', to: 'right' });
     });
     context.subscriptions.push(disposable);
     

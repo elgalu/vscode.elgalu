@@ -12,6 +12,8 @@
     ],
     "activationEvents": [
         "onCommand:elgalu.sayHello",
+        "onCommand:elgalu.moveActiveTabLeft",
+        "onCommand:elgalu.moveActiveTabRight",
         "onCommand:elgalu.upMany",
         "onCommand:elgalu.downMany",
         "onCommand:elgalu.leftMany",
@@ -21,10 +23,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "elgalu.upMany",
-            "title": "Move 10 up"
-        }]
+        "commands": [
+            { "command": "elgalu.moveActiveTabLeft",
+              "title": "Move active tab to the left" },
+            { "command": "elgalu.moveActiveTabRight",
+              "title": "Move active tab to the right" }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
